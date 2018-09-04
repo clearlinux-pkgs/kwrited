@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kwrited
-Version  : 5.13.4
-Release  : 2
-URL      : https://download.kde.org/stable/plasma/5.13.4/kwrited-5.13.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.13.4/kwrited-5.13.4.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.13.4/kwrited-5.13.4.tar.xz.sig
+Version  : 5.13.5
+Release  : 3
+URL      : https://download.kde.org/stable/plasma/5.13.5/kwrited-5.13.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.13.5/kwrited-5.13.5.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.13.5/kwrited-5.13.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -18,7 +18,6 @@ Requires: kwrited-license
 Requires: kwrited-data
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : knotifications-dev
 
 %description
 No detailed description available
@@ -50,14 +49,14 @@ license components for the kwrited package.
 
 
 %prep
-%setup -q -n kwrited-5.13.4
+%setup -q -n kwrited-5.13.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535433595
+export SOURCE_DATE_EPOCH=1536088110
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -65,7 +64,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535433595
+export SOURCE_DATE_EPOCH=1536088110
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/kwrited
 cp COPYING %{buildroot}/usr/share/doc/kwrited/COPYING
