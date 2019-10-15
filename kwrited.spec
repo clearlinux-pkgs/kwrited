@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kwrited
-Version  : 5.16.5
-Release  : 23
-URL      : https://download.kde.org/stable/plasma/5.16.5/kwrited-5.16.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.5/kwrited-5.16.5.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.5/kwrited-5.16.5.tar.xz.sig
+Version  : 5.17.0
+Release  : 24
+URL      : https://download.kde.org/stable/plasma/5.17.0/kwrited-5.17.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.0/kwrited-5.17.0.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.0/kwrited-5.17.0.tar.xz.sig
 Summary  : KDE daemon listening for wall and write messages
 Group    : Development/Tools
 License  : GPL-2.0
@@ -49,14 +49,14 @@ license components for the kwrited package.
 
 
 %prep
-%setup -q -n kwrited-5.16.5
+%setup -q -n kwrited-5.17.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567646609
+export SOURCE_DATE_EPOCH=1571161756
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -69,14 +69,14 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1567646609
+export SOURCE_DATE_EPOCH=1571161756
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwrited
-cp COPYING %{buildroot}/usr/share/package-licenses/kwrited/COPYING
+cp %{_builddir}/kwrited-5.17.0/COPYING %{buildroot}/usr/share/package-licenses/kwrited/7c203dee3a03037da436df03c4b25b659c073976
 pushd clr-build
 %make_install
 popd
@@ -95,4 +95,4 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/kwrited/COPYING
+/usr/share/package-licenses/kwrited/7c203dee3a03037da436df03c4b25b659c073976
