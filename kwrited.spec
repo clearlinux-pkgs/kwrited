@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : kwrited
-Version  : 5.20.2
-Release  : 42
-URL      : https://download.kde.org/stable/plasma/5.20.2/kwrited-5.20.2.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.20.2/kwrited-5.20.2.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.20.2/kwrited-5.20.2.tar.xz.sig
+Version  : 5.20.3
+Release  : 43
+URL      : https://download.kde.org/stable/plasma/5.20.3/kwrited-5.20.3.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.20.3/kwrited-5.20.3.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.20.3/kwrited-5.20.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -51,15 +51,15 @@ license components for the kwrited package.
 
 
 %prep
-%setup -q -n kwrited-5.20.2
-cd %{_builddir}/kwrited-5.20.2
+%setup -q -n kwrited-5.20.3
+cd %{_builddir}/kwrited-5.20.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1603847215
+export SOURCE_DATE_EPOCH=1605108853
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -75,10 +75,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1603847215
+export SOURCE_DATE_EPOCH=1605108853
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwrited
-cp %{_builddir}/kwrited-5.20.2/COPYING %{buildroot}/usr/share/package-licenses/kwrited/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/kwrited-5.20.3/COPYING %{buildroot}/usr/share/package-licenses/kwrited/7c203dee3a03037da436df03c4b25b659c073976
 pushd clr-build
 %make_install
 popd
