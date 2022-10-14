@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : kwrited
-Version  : 5.25.5
-Release  : 69
-URL      : https://download.kde.org/stable/plasma/5.25.5/kwrited-5.25.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.5/kwrited-5.25.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.5/kwrited-5.25.5.tar.xz.sig
+Version  : 5.26.0
+Release  : 70
+URL      : https://download.kde.org/stable/plasma/5.26.0/kwrited-5.26.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.0/kwrited-5.26.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.0/kwrited-5.26.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : GPL-2.0
+License  : CC0-1.0 GPL-2.0
 Requires: kwrited-bin = %{version}-%{release}
 Requires: kwrited-data = %{version}-%{release}
 Requires: kwrited-license = %{version}-%{release}
@@ -51,15 +51,15 @@ license components for the kwrited package.
 
 
 %prep
-%setup -q -n kwrited-5.25.5
-cd %{_builddir}/kwrited-5.25.5
+%setup -q -n kwrited-5.26.0
+cd %{_builddir}/kwrited-5.26.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662499985
+export SOURCE_DATE_EPOCH=1665706565
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -75,9 +75,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662499985
+export SOURCE_DATE_EPOCH=1665706565
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwrited
+cp %{_builddir}/kwrited-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kwrited/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
 cp %{_builddir}/kwrited-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kwrited/3e8971c6c5f16674958913a94a36b1ea7a00ac46 || :
 pushd clr-build
 %make_install
@@ -98,3 +99,4 @@ popd
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kwrited/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+/usr/share/package-licenses/kwrited/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
