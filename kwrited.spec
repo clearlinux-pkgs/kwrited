@@ -9,7 +9,7 @@
 #
 Name     : kwrited
 Version  : 5.27.10
-Release  : 88
+Release  : 89
 URL      : https://download.kde.org/stable/plasma/5.27.10/kwrited-5.27.10.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.27.10/kwrited-5.27.10.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.27.10/kwrited-5.27.10.tar.xz.sig
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701917975
+export SOURCE_DATE_EPOCH=1702011780
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -124,7 +124,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1701917975
+export SOURCE_DATE_EPOCH=1702011780
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwrited
 cp %{_builddir}/kwrited-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kwrited/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
