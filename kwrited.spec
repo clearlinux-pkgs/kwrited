@@ -9,7 +9,7 @@
 #
 Name     : kwrited
 Version  : 6.0.2
-Release  : 91
+Release  : 92
 URL      : https://download.kde.org/stable/plasma/6.0.2/kwrited-6.0.2.tar.xz
 Source0  : https://download.kde.org/stable/plasma/6.0.2/kwrited-6.0.2.tar.xz
 Source1  : https://download.kde.org/stable/plasma/6.0.2/kwrited-6.0.2.tar.xz.sig
