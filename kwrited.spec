@@ -9,7 +9,7 @@
 #
 Name     : kwrited
 Version  : 6.1.4
-Release  : 103
+Release  : 104
 URL      : https://download.kde.org/stable/plasma/6.1.4/kwrited-6.1.4.tar.xz
 Source0  : https://download.kde.org/stable/plasma/6.1.4/kwrited-6.1.4.tar.xz
 Source1  : https://download.kde.org/stable/plasma/6.1.4/kwrited-6.1.4.tar.xz.sig
